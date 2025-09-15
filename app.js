@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import cors from "cors"
 import { connectDB } from "./src/config/database.js";
 import { userRoutes } from "./src/routes/user.routes.js";
+import { songRoutes } from "./src/routes/hssong.routes.js";
+import { playlistModel } from "./src/models/playlist.model.js";
+import { playlistRoutes } from "./src/routes/playlist.routes.js";
 
 
 
@@ -18,6 +21,8 @@ app.use(cors())
 
 //puertos
 app.use ("/api",userRoutes);
+app.use ("/api",songRoutes);
+app.use ("/api", playlistRoutes);
 
 
 

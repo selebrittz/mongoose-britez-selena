@@ -18,6 +18,8 @@ const UserSchema = new Schema (
     required: true,
      minlength: 6  // al menos 6 caracteres
   },
+
+  //relacion  1:1 embebida
   profile:{
      first_name: {
      type: String,
@@ -39,3 +41,5 @@ const UserSchema = new Schema (
 });
 
 export const userModel = model ( "User", UserSchema)
+
+//aca tengo que hacer el virtual
