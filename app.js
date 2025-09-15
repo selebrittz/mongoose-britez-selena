@@ -5,6 +5,7 @@ import { connectDB } from "./src/config/database.js";
 import { userRoutes } from "./src/routes/user.routes.js";
 
 
+
 dotenv.config()
 
 const app = express();
@@ -16,7 +17,8 @@ app.use(cors())
 
 
 //puertos
-app.use ("/api",userRoutes)
+app.use ("/api",userRoutes);
+
 
 
 app.listen(PORT, async () => {

@@ -1,16 +1,17 @@
 import { userModel } from "../models/user.model.js";
 
 export const createUser = async (req, res) => {
-    const {username, email, password} = req.body;
+    const {username, email, password,profile} = req.body;
     try {
         const newUser = await userModel.create({
             username,
             email,
-            password
+            password,
+            profile
         });
         res.status(201).json ({
             ok:true,
-            msg: "usuario creado correctamente",
+            msg: "usuario y perfil creado correctamente",
             data: newUser
         });
     } catch (error) {
@@ -42,7 +43,7 @@ export const getAllUser = async (req, res) => {
 export const getUserById = async (req, res) => {
     const { id } = req.params;
     try {
-        const user = await userModel.findById(id);
+        const user = await userModel.findById(id)
         res.status(200).json ({
             ok:true,
             data: user
