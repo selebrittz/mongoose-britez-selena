@@ -24,11 +24,10 @@ export const getPlaylists = async (req, res) => {
 export const getPlaylistById = async (req, res) => {
   try {
     const playlist = await playlistModel
-      .findById(req.params.id)
-      .populate("songs");
+      .findById(req.params.id).populate("songs");
     if (!playlist) return res.status(404).json({ message: "Playlist no encontrada" });
     res.json(playlist);
-  } catch (error) {
+  } catch (error) { 
     res.status(500).json({ error: error.message });
   }
 };

@@ -25,7 +25,7 @@ export const createUser = async (req, res) => {
 
 export const getAllUser = async (req, res) => {
     try {
-        const users = await userModel.find();
+        const users = await userModel.find().populate("playlist");
         res.status(200).json ({
             ok:true,
             data: users

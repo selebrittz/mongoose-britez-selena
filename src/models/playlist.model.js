@@ -12,8 +12,12 @@ const playlistSchema = new Schema({
     trim: true,
   },
 
+  user: {
+  type: Schema.Types.ObjectId,
+  ref: "User",
+  },
 
-  // relación 1:n una playlist tiene muchas canciones
+  // relación 1:n na playlist tiene muchas canciones
   songs: [
     {
       type: Types.ObjectId,
