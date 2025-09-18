@@ -18,8 +18,14 @@ Playlist sin ref
 //En lugar de guardar directamente las playlists dentro del usuario, use un virtual en el esquema de usuario. virtual no almacena datos en la base de datos, sino que le indica a Mongoose cómo encontrar todas las playlists relacionadas con ese usuario. 
 Al hacer una consulta de usuarios, utilizamos la función populate. Esta función se encarga de reemplazar ese virtual por los documentos reales de las playlists que pertenecen al usuario. De esta forma, cuando pedimos la información de un usuario, además de sus datos personales también recibimos un arreglo con todas sus playlists.
 
-no hice controladores refactorizados
+no hice controladores refactorizados.
 
+playlist addsong. relacion muchos a muchos
+
+Creamos un endpoint específico para agregar datos en la relación muchos a muchos entre playlists y canciones.
+En este caso, cuando un usuario quiere incluir una canción en una playlist, se envia los ids de la playlist y la canción.
+El servidor actualiza el documento de la playlist insertando la referencia de la canción dentro del array songs.
+//$push
 
 Eliminaciones lógicas y en cascada
 Eliminación lógica:

@@ -36,7 +36,7 @@ export const addSongToPlaylist = async (req, res) => {
     const { playlistId, songId } = req.body;
     const playlist = await playlistModel.findByIdAndUpdate(
       playlistId,
-      { $push: { songs: songId } },
+      { $push: { songs: songId } }, //$push: agrega ese id al array songs de la playlist
       { new: true }
     ).populate("songs"); //nombre de ref
 

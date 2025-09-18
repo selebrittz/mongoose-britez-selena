@@ -3,6 +3,7 @@ import { Router } from "express"
 import { createPlaylist,
     deletePlaylist,
     getPlaylistById,
+    addSongToPlaylist,
     getPlaylists
 } from "../controllers/playlist.controller.js"
 
@@ -14,6 +15,6 @@ playlistRoutes.get("/playlists",getPlaylists);
 
 playlistRoutes.get("/playlist/:id", getPlaylistById);
 
-playlistRoutes.put("/playlist/:id", getPlaylistById);
+playlistRoutes.put("/playlist/add", addSongToPlaylist);
 
 playlistRoutes.delete("/playlist/:id", deletePlaylist);
